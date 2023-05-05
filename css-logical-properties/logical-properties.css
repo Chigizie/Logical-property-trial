@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --regular-border-radius: .5em;
+  --regular-padding: .4em;
+  --big-padding: 1.18em;
+  --margin: .8rem;
+  --regular-font-size: 1.1em;
+  --bold-font-weight: bold;
+  --large-word-spacing: 0.5em;
+}
+.logical-properties {
+  display: grid;
+  font-size: var(--regular-font-size);
+  background-color: #222;
+  color: #fff;
+  block-size: 10em;
+  text-transform: capitalize;
+  padding-inline-start:var(--big-padding) ;
+  margin-block-end: var(--margin);
+  border-radius: var(--regular-border-radius);
+  padding-block: var(--regular-padding);
+}
+
+.grid p {
+  border-block: 1px solid hotpink;
+  padding-inline: 1.2em;
+  padding-block: var(--big-padding);
+  border-start-start-radius: var(--regular-border-radius);
+  border-start-end-radius: var(--regular-border-radius);
+  border-end-start-radius: var(--regular-border-radius);
+  border-end-end-radius: var(--regular-border-radius);
+  font-size: var(--regular-font-size);
+  font-weight: var(--bold-font-weight);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 50%;
+}
+.grid {
+  display: grid;
+  gap: 0.8em;
+  grid-template-areas:
+    "one one one one two"
+    "three four five five six"
+    "seven eight nine ten six"
+    "seven eleven eleven twelve six"
+    "thirten thirten thirten thirten thirten";
+
+  grid-template-columns: repeat(5, minmax(300px, 1fr));
+}
+
+@media (width <= 700px) {
+  .grid {
+    display: grid;
+    gap: 0.8em;
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six"
+      "seven"
+      "eight"
+      "nine"
+      "ten"
+      "eleven"
+      "twelve"
+      "thirten";
+  }
+}
+
+.grid p:nth-child(1) {
+  background-color: red;
+  grid-area: one;
+}
+.grid p:nth-child(2) {
+  background-color: rgba(160, 25, 25, 0.73);
+  grid-area: two;
+}
+.grid p:nth-child(3) {
+  background-color: rgba(174, 132, 132, 0.67);
+  grid-area: three;
+}
+.grid p:nth-child(4) {
+  background-color: rgb(155, 225, 160);
+  grid-area: four;
+}
+.grid p:nth-child(5) {
+  background-color: rgb(118, 106, 19);
+  grid-area: five;
+}
+.grid p:nth-child(6) {
+  background-color: rgb(63, 182, 219);
+  grid-area: six;
+}
+.grid p:nth-child(7) {
+  background-color: rgba(174, 183, 112, 0.617);
+  grid-area: seven;
+}
+.grid p:nth-child(8) {
+  background-color: rgba(43, 255, 0, 0.585);
+  grid-area: eight;
+}
+.grid p:nth-child(9) {
+  background-color: rgb(121, 143, 163);
+  grid-area: nine;
+}
+.grid p:nth-child(10) {
+  background-color: rgba(104, 44, 44, 0.79);
+  grid-area: ten;
+}
+.grid p:nth-child(11) {
+  background-color: rgba(93, 59, 117, 0.79);
+  grid-area: eleven;
+}
+.grid p:nth-child(12) {
+  background-color: rgba(104, 44, 44, 0.293);
+  grid-area: twelve;
+}
+.grid p:nth-child(13) {
+  background-color: rgba(226, 218, 231, 0.898);
+  grid-area: thirten;
+}
